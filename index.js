@@ -13,8 +13,8 @@ const VideoListItem = [];
 
 app.get("/", (req, res) => {
   res.json({
-    data:"http://YOUR_SERVER_NAME/?url=https://www.youtube.com/watch?v=o4yzuz8jWbI&pp=ygUMYm95IHdpdGh0dWtl&quality=720p",
-    ForDownloadFile: "http://YOUR_SERVER_NAME/download?url=https://www.youtube.com/watch?v=o4yzuz8jWbI&quality=720p"
+    data:"https://ytdlhigh-c7d05409d972.herokuapp.com/?url=https://www.youtube.com/watch?v=o4yzuz8jWbI&pp=ygUMYm95IHdpdGh0dWtl&quality=720p",
+    ForDownloadFile: "https://ytdlhigh-c7d05409d972.herokuapp.com/download?url=https://www.youtube.com/watch?v=o4yzuz8jWbI&quality=720p"
   });
 });
 
@@ -142,7 +142,7 @@ app.get("/download", async (req, res) => {
   video.pipe(ffmpegProcess.stdio[5]);
 
   res.json({
-    video: `http://localhost:3000/${sanitizedTitle +" - "+ req.query.quality}.mkv`,
+    video: `https://ytdlhigh-c7d05409d972.herokuapp.com/${sanitizedTitle +" - "+ req.query.quality}.mkv`,
     VideoListItem: VideoListItem,
   });
 
